@@ -13,7 +13,7 @@ data "aws_ami" "amazon-2" {
 
 
 resource "aws_security_group" "ingress-all-ssh" {
-  name = "${var.podtato_name}-allow-all-ssh"
+  name = "${var.service_name}-allow-all-ssh"
   ingress {
     cidr_blocks = [
       "0.0.0.0/0"
@@ -32,7 +32,7 @@ resource "aws_security_group" "ingress-all-ssh" {
 }
 
 resource "aws_security_group" "ingress-main-http" {
-    name = "${var.podtato_name}-allow-main-http"
+    name = "${var.service_name}-allow-main-http"
   ingress {
     from_port = 8080
     to_port = 8080
@@ -50,7 +50,7 @@ resource "aws_security_group" "ingress-main-http" {
 }
 
 resource "aws_security_group" "ingress-all-http" {
-  name = "${var.podtato_name}-allow-all-http"
+  name = "${var.service_name}-allow-all-http"
   ingress {
     cidr_blocks = [
       "0.0.0.0/0"
@@ -69,7 +69,7 @@ resource "aws_security_group" "ingress-all-http" {
 }
 
 resource "aws_security_group" "ingress-all-https" {
-  name = "${var.podtato_name}-allow-all-https"
+  name = "${var.service_name}-allow-all-https"
   ingress {
     cidr_blocks = [
       "0.0.0.0/0"
@@ -88,7 +88,7 @@ resource "aws_security_group" "ingress-all-https" {
 }
 
 resource "aws_security_group" "elb_http" {
-  name        = "${var.podtato_name}-elb_http"
+  name        = "${var.service_name}-elb_http"
   description = "Allow HTTP traffic to instances through Elastic Load Balancer"
 
   ingress {
@@ -111,7 +111,7 @@ resource "aws_security_group" "elb_http" {
 }
 
 resource "aws_security_group" "elb_http_8080" {
-  name        = "${var.podtato_name}-elb_http_8080"
+  name        = "${var.service_name}-elb_http_8080"
   description = "Allow HTTP traffic to instances through Elastic Load Balancer"
 
   ingress {
