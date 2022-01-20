@@ -34,14 +34,14 @@ cat > /app/data/www/index.html<< EOF
 		<div class="feature">
 			<h3>Microservice 1</h3>
 			<p>Klicke auf den Button des Microservice 1:</p>
-      <a href=http://${ADDRESSMS1}:8080/index.html>Zurück</a>
+      <a href=http://${ADDRESSMS1}:8080/index.html>Microservice 1</a>
 
 
 		</div>
 		<div class="feature">
 			<h3>Microservice 2</h3>
 			<p>Klicke auf den Button des Microservice 2:</p>
-      <a href="http://${ADDRESSMS1}:8080/index.html">Zurück</a>
+      <a href="http://${ADDRESSMS2}:8080/index.html">Microservice 2</a>
 
 		</div>
         <br>

@@ -35,11 +35,7 @@ cat > /app/data/www/index.html<< EOF
 		</div>
         <img src="cloud.jpg" alt="Cloud_photo" width="500" height="600">
         <br>
-        <! ---  <button class="GFG" --->
             <a href="http://${ADDRESS}/index.html">Zurück</a> 
-    		 <! --- onclick="window.location.href = '${ADDRESS}:8080/index.html';"> Anpassen --->
-        <! --- 	Zurück ---> 
-		<! --- </button> --->
         <br>
 	<footer>	
 		&copy;2022 Clemens Lasslesberger & Balazs Dekany, Virt-PT Fernlehre 2

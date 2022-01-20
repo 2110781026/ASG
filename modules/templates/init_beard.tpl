@@ -30,7 +30,7 @@ cat > /app/data/www/index.html<< EOF
 			<h1>Willkommen auf dem Microservice 1!</h1>
 		</div>
         <div class="h3">
-            <h3>Es ist ein Scnurrbart:</h3>>
+            <h3>Es ist ein Schnurrbart:</h3>
         </div>
         <img src="beard.jpg" alt="schnurrbart_photo" width="290" height="174">
         <br>
