@@ -34,18 +34,15 @@ cat > /app/data/www/index.html<< EOF
 		<div class="feature">
 			<h3>Microservice 1</h3>
 			<p>Klicke auf den Button des Microservice 1:</p>
-			<button class="GFG" 
-				onclick="window.location.href = 'microservice_1.html';"> <! --- Anpassen --->
-				Microservice 1
-			</button>
+      <a href=http://${ADDRESSMS1}/index.html>Zurück</a>
+
+
 		</div>
 		<div class="feature">
 			<h3>Microservice 2</h3>
 			<p>Klicke auf den Button des Microservice 2:</p>
-            <button class="GFG" 
-				onclick="window.location.href = 'microservice_2.html';"> <! --- Anpassen --->
-				Microservice 2
-			</button>
+      <a href="http://${ADDRESSMS1}/index.html">Zurück</a>
+
 		</div>
         <br>
 	<footer>
@@ -74,6 +71,6 @@ server {
 EOF
 
 
-sudo docker run --rm -ti -p 8080:80 -v /app/data/www/index.html:/app/index.html -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
+sudo docker run -p 8080:80 -v /app/data/www/index.html:/app/index.html -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
 
  

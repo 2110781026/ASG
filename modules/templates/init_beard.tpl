@@ -35,10 +35,7 @@ cat > /app/data/www/index.html<< EOF
         <img src="beard.jpg" alt="schnurrbart_photo" width="290" height="174">
         <br>
 	</header>
-	<button class="GFG" 
-    		onclick="window.location.href = 'virt_home.html';"> <! --- Anpassen --->
-        	Zurück
-	</button>
+    <a href="${ADDRESS}/index.html">Zurück</a> 
 	<br>
 	<footer></footer>
 		&copy;2022 Clemens Lasslesberger & Balazs Dekany, Virt-PT Fernlehre 2

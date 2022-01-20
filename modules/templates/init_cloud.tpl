@@ -14,11 +14,15 @@ mkdir /app/data/www
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 sudo wget -P /app/data/www https://raw.githubusercontent.com/2110781026/ASG/main/modules/cloud.jpg
+ 
+
+echo ${ADDRESS} > /app/data/www/url.txt
 
 cat > /app/data/www/index.html<< EOF
 
 <html lang="en-US">
 <head>
+
 	<meta charset="UTF-8">
 	<title>Microservice 2</title>
 	<script src="http://localhost:8080/microservice_2.html"></script> <! --- Anpassen --->
@@ -31,10 +35,11 @@ cat > /app/data/www/index.html<< EOF
 		</div>
         <img src="cloud.jpg" alt="Cloud_photo" width="500" height="600">
         <br>
-        <button class="GFG" 
-    		onclick="window.location.href = 'virt_home.html';"> <! --- Anpassen --->
-        	Zurück
-		</button>
+        <! ---  <button class="GFG" --->
+            <a href="${ADDRESS}/index.html">Zurück</a> 
+    		 <! --- onclick="window.location.href = '${ADDRESS}:8080/index.html';"> Anpassen --->
+        <! --- 	Zurück ---> 
+		<! --- </button> --->
         <br>
 	<footer>	
 		&copy;2022 Clemens Lasslesberger & Balazs Dekany, Virt-PT Fernlehre 2
