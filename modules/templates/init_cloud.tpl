@@ -13,7 +13,7 @@ mkdir /app/data/www
 
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
-sudo wget -P /app/data/www https://raw.githubusercontent.com/2110781026/ASG/main/modules/beard.jpg
+sudo wget -P /app/data/www https://raw.githubusercontent.com/2110781026/ASG/main/modules/cloud.jpg
 
 
 
@@ -35,6 +35,6 @@ server {
 EOF
 
 
-sudo docker run -p 8080:80 -v /app/data/www/beard.jpg:/app/beard.jpg -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
+sudo docker run -p 8080:80 -v /app/data/www/cloud.jpg:/app/cloud.jpg -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
 
  
