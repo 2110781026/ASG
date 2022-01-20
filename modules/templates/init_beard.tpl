@@ -7,13 +7,15 @@ sudo yum-config-manager --enable epel
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 
-mkdir -p /app/data/etc
+mkdir -p /app/data/etc/pics
 mkdir /app/data/var
 mkdir /app/data/www
 
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
-cp {picture} /app/beard.jpg
+sudo wget -P /app/data/www https://raw.githubusercontent.com/2110781026/ASG/main/modules/beard.jpg
+
+
 
 cat > /app/nginx.conf<< EOF
 
@@ -24,14 +26,15 @@ server {
 
     location / {
         root   /app;
-        index index.html;
     }
+
+
 }
 
 
 EOF
 
 
-docker run --rm -ti -p 8080:80 -v /app/data/www/index.html:/app/index.html -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
+sudo docker run -p 8080:80 -v /app/data/www/beard.jpg:/app/beard.jpg -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
 
  
