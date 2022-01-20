@@ -15,6 +15,37 @@ SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 sudo wget -P /app/data/www https://raw.githubusercontent.com/2110781026/ASG/main/modules/cloud.jpg
 
+cat > /app/data/www/index.html<< EOF
+
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Microservice 2</title>
+	<script src="http://localhost:8080/microservice_2.html"></script> <! --- Anpassen --->
+</head>
+<body>
+	<div class="container">
+	<header>
+        <div class="header">
+			<h1>Willkommen auf dem Microservice 2!</h1>
+		</div>
+        <img src="cloud.jpg" alt="Cloud_photo" width="500" height="600">
+        <br>
+        <button class="GFG" 
+    		onclick="window.location.href = 'virt_home.html';"> <! --- Anpassen --->
+        	Zurück
+		</button>
+        <br>
+	<footer>	
+		&copy;2022 Clemens Lasslesberger & Balazs Dekany, Virt-PT Fernlehre 2
+	</footer>
+	</div>
+</body>
+</html>
+
+
+EOF
+
 
 
 cat > /app/nginx.conf<< EOF
@@ -26,6 +57,7 @@ server {
 
     location / {
         root   /app;
+        index index.html;
     }
 
 
@@ -35,6 +67,6 @@ server {
 EOF
 
 
-sudo docker run -p 8080:80 -v /app/data/www/cloud.jpg:/app/cloud.jpg -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
+sudo docker run -p 8080:80 -v /app/data/www/cloud.jpg:/app/cloud.jpg -v /app/nginx.conf:/etc/nginx/conf.d/default.conf -v /app/data/www/index.html:/app/index.html nginx
 
  

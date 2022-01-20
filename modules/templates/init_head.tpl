@@ -15,16 +15,45 @@ SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 cat > /app/data/www/index.html<< EOF
 
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage-Virt-PT-Fernlehre-2</title>
+	<script src="http://localhost:8080/virt_home.html"></script> <! --- Anpassen --->
+</head>
+<body>
+	<div class="container">
+	<header>
+		<div class="header">
+			<h1>Herzliche willkommen auf dem Top-Service!</h1>
+		</div>
+	</header>
+		<div class="main">
+			<h2>Virt-PT Fernlehre 2</h2>
+		</div>
+		<div class="feature">
+			<h3>Microservice 1</h3>
+			<p>Klicke auf den Button des Microservice 1:</p>
+			<button class="GFG" 
+				onclick="window.location.href = 'microservice_1.html';"> <! --- Anpassen --->
+				Microservice 1
+			</button>
+		</div>
+		<div class="feature">
+			<h3>Microservice 2</h3>
+			<p>Klicke auf den Button des Microservice 2:</p>
+            <button class="GFG" 
+				onclick="window.location.href = 'microservice_2.html';"> <! --- Anpassen --->
+				Microservice 2
+			</button>
+		</div>
+        <br>
+	<footer>
+		&copy;2022 Clemens Lasslesberger & Balazs Dekany, Virt-PT Fernlehre 2
+	</footer>
+	</div>
+</body>
 </html>
-
 
 EOF
 
