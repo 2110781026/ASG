@@ -36,7 +36,7 @@ cat > /app/data/www/index.html<< EOF
         <img src="cloud.jpg" alt="Cloud_photo" width="500" height="600">
         <br>
         <! ---  <button class="GFG" --->
-            <a href="${ADDRESS}/index.html">Zurück</a> 
+            <a href="http://${ADDRESS}/index.html">Zurück</a> 
     		 <! --- onclick="window.location.href = '${ADDRESS}:8080/index.html';"> Anpassen --->
         <! --- 	Zurück ---> 
 		<! --- </button> --->
