@@ -13,6 +13,7 @@ mkdir /app/data/www
 
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
+cp {picture} /app/beard.jpg
 
 cat > /app/nginx.conf<< EOF
 
