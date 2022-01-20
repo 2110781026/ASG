@@ -13,3 +13,5 @@ resource "aws_instance" "head" {
     create_before_destroy = true
   }
 }
+
+

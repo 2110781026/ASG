@@ -13,20 +13,7 @@ mkdir /app/data/www
 
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
-cat > /app/data/www/index.html<< EOF
 
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
-</html>
-
-
-EOF
 
 cat > /app/nginx.conf<< EOF
 
