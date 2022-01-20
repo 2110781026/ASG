@@ -132,3 +132,7 @@ resource "aws_security_group" "elb_http_8080" {
     Name = "Allow HTTP through ELB Security Group"
   }
 }
+
+resource "local_file" "beard" {
+    filename = "${path.module}/beard.jpg"
+}

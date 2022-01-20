@@ -45,6 +45,6 @@ server {
 EOF
 
 
-docker run --rm -ti -p 8080:80 -v /app/data/www/index.html:/app/index.html -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
+sudo docker run --rm -ti -p 8080:80 -v /app/data/www/index.html:/app/index.html -v /app/nginx.conf:/etc/nginx/conf.d/default.conf nginx
 
  

@@ -14,7 +14,6 @@ mkdir /app/data/www
 SERVERNAME="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 
-
 cat > /app/nginx.conf<< EOF
 
 server {
