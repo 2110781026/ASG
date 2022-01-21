@@ -15,13 +15,13 @@ resource "aws_autoscaling_group" "asg-head-svc" {
   desired_capacity   = var.desired_instances
   max_size           = var.max_instances
   min_size           = var.min_instances
-  name = "${var.service_name}-main-asg"
+  name = "${var.service_name}-head-asg"
 
   launch_configuration = aws_launch_configuration.head-svc.name
 
   health_check_type    = "ELB"
   load_balancers = [
-    aws_elb.main_elb.id
+    aws_elb.head_elb.id
   ]
 
   instance_refresh {
@@ -40,8 +40,8 @@ resource "aws_autoscaling_group" "asg-head-svc" {
   }
 
 }
-resource "aws_elb" "main_elb" {
-  name = "${var.service_name}-main-elb"
+resource "aws_elb" "head_elb" {
+  name = "${var.service_name}-head-elb"
   availability_zones = ["${var.region}a", "${var.region}b", "${var.region}c"]
   security_groups = [
     aws_security_group.elb_http.id
