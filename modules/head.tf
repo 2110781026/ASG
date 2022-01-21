@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "head-svc" {
   image_id = data.aws_ami.amazon-2.image_id
   instance_type = "t3.micro"
-  user_data = base64encode(templatefile("${path.module}/templates/init_head.tpl", {port = 80, ADDRESSMS1 = aws_instance.beard.public_ip, ADDRESSMS2 = aws_instance.cloud.public_ip} ))
+  user_data = base64encode(templatefile("${path.module}/templates/init_head.tpl", {port = 80, ADDRESSMS1 = aws_elb.beard_elb.dns_name, ADDRESSMS2 = aws_elb.cloud_elb.dns_name} ))
   security_groups = [aws_security_group.ingress-all-https.id,aws_security_group.ingress-all-ssh.id,aws_security_group.ingress-all-http.id, aws_security_group.elb_http.id]
   name_prefix = "${var.service_name}-head-svc-"
 

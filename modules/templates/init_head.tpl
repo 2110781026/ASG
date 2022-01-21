@@ -66,11 +66,11 @@ server {
         index index.html;
     }
 	    location /proxy1/ {
-        proxy_pass http://${ADDRESSMS1}:8080/;
+        proxy_pass http://${ADDRESSMS1}/;
     }
 
 		location /proxy2/ {
-        proxy_pass http://${ADDRESSMS2}:8080/;
+        proxy_pass http://${ADDRESSMS2}/;
     }
 }
 
